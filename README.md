@@ -1,1 +1,1 @@
-# my-practise
+# my-practise自己平时练习的各种代码，会提交到这个仓库中。
