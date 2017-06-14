@@ -1,35 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<beans xmlns="http://www.springframework.org/schema/beans"
-       xmlns:tx="http://www.springframework.org/schema/tx"
-       xmlns:aop="http://www.springframework.org/schema/aop"
-       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xmlns:context="http://www.springframework.org/schema/context"
        xmlns:mvc="http://www.springframework.org/schema/mvc"
        xmlns:security="http://www.springframework.org/schema/security"
+       xmlns="http://www.springframework.org/schema/beans"
        xsi:schemaLocation="http://www.springframework.org/schema/beans
             http://www.springframework.org/schema/beans/spring-beans.xsd
             http://www.springframework.org/schema/mvc
             http://www.springframework.org/schema/mvc/spring-mvc.xsd
             http://www.springframework.org/schema/context
             http://www.springframework.org/schema/context/spring-context.xsd
-            http://www.springframework.org/schema/tx
-            http://www.springframework.org/schema/tx/spring-tx.xsd
+
+
             http://www.springframework.org/schema/security
             http://www.springframework.org/schema/security/spring-security.xsd">
-    <import resource="classpath:spring/springmvc.xml" />
-    <context:component-scan base-package="com.wp.practise" />
+    <import resource="classpath:spring/applicationContext-practise.xml"/>
+    <context:component-scan base-package="com.wp.practise"/>
+
+    <!-- filters -->
+    <bean id="requestContextFilter" class="org.springframework.web.filter.RequestContextFilter">
+        <property name="threadContextInheritable" value="true"/>
+    </bean>
+    <!-- filter end -->
 
     <!-- mutipartFile -->
     <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
-        <property name="maxUploadSize" value="67108864" />
+        <property name="maxUploadSize" value="67108864"/>
     </bean>
 
     <!-- messageConverters -->
     <bean class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter">
         <property name="messageConverters">
             <list>
-                <bean class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter" />
-                <bean class="org.springframework.http.converter.ByteArrayHttpMessageConverter" />
+                <bean class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter"/>
+                <bean class="org.springframework.http.converter.ByteArrayHttpMessageConverter"/>
             </list>
         </property>
         <property name="customArgumentResolvers">
@@ -38,14 +42,22 @@
         </property>
     </bean>
 
-    <bean class="org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver" />
+    <bean class="org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver"/>
 
-    <bean class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter" />
+    <bean class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter"/>
 
     <!-- 定义JSP文件的位置 -->
     <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
-        <property name="prefix" value="/WEB-INF/views/"/>
+        <property name="prefix" value="/WEB-INF/jsp/"/>
         <property name="suffix" value=".jsp"/>
     </bean>
+
+    <!-- 监控数据源 -->
+    <!--<bean id="springDataSourceBeanPostProcessor" class="net.bull.javamelody.SpringDataSourceBeanPostProcessor">
+    </bean>
+
+    <bean id="wrappedDataSource" class="net.bull.javamelody.SpringDataSourceFactoryBean">
+        <property name="targetName" value="dataSource"/>
+    </bean>-->
 
 </beans>

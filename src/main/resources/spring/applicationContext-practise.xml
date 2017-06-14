@@ -40,7 +40,7 @@
 
 
     <!-- 默认扫描的包路径 -->
-    <context:component-scan base-package="com.wp.practise.**"/>
+    <context:component-scan base-package="com.wp.practise"/>
 
     <bean id="propertyConfigurer" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
         <property name="locations">
@@ -68,17 +68,6 @@
             </list>
         </property>
     </bean>
-    <!--<bean id = "dataSource" class = "org.apache.commons.dbcp.BasicDataSource" >-->
-
-    <!--<property name = "driverClassName" value = "${jdbc_driverClassName}" />-->
-
-    <!--<property name = "url" value = "${jdbc_url}" />-->
-
-    <!--<property name = "username" value = "${jdbc_username}" />-->
-
-    <!--<property name = "password" value = "${jdbc_password}" />-->
-
-    <!--</bean>-->
 
     <bean id="wall-filter" class="com.alibaba.druid.wall.WallFilter">
         <property name="config" ref="wall-config" />
@@ -92,7 +81,7 @@
         <property name="basePackage" value="com.wp.practise.dao"/>
         <property name="properties">
             <value>
-                mappers=com.wp.practise.dao.base.BaseDao
+                mappers=com.wp.practise.mybatis.BaseDAO
             </value>
         </property>
     </bean>

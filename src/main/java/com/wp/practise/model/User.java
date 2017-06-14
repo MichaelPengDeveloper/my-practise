@@ -1,11 +1,16 @@
 package com.wp.practise.model;
 
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+
 /**
  * 用户实体类
  * Created by Wang Peng on 2017/6/7.
  */
 public class User {
 
+    @Id
+    @GeneratedValue(generator = "JDBC")
     private Integer id;
 
     private String userName;

@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Configuration status="off" monitorInterval="1800">
+
+    <properties>
+        <property name="LOG_HOME">${sys:catalina.base}/logs</property>
+        <property name="PATTERN">%-5level^|%d{ISO8601}^|invest^|%msg%n</property>
+        <property name="CONSOLE_PATTERN">%d{HH:mm:ss,SSS} %-5level %m%n</property>
+    </properties>
+
+
+    <Appenders>
+        <Console name="Console" target="SYSTEM_OUT">
+            <PatternLayout pattern="${CONSOLE_PATTERN}" />
+        </Console>
+
+        <RollingFile name="InvestRollingFile" fileName="${LOG_HOME}/invest.log"
+                     filePattern="${LOG_HOME}/invest.log.%d{yyyy-MM-dd}" append="true"
+                     bufferedIO="true">
+            <PatternLayout pattern="${PATTERN}" />
+            <RegexFilter regex=".*InvestResponseBodyAdvice.*" onMatch="DENY" onMismatch="ACCEPT"/>
+            <Policies>
+                <TimeBasedTriggeringPolicy interval="1"
+                                           modulate="true" />
+            </Policies>
+        </RollingFile>
+
+        <RollingFile name="InvestRequestLogFile" fileName="${LOG_HOME}/invest_request.log"
+                     filePattern="${LOG_HOME}/invest_request.log.%d{yyyy-MM-dd}" append="true"
+                     bufferedIO="true">
+            <PatternLayout pattern="${PATTERN}" />
+            <RegexFilter regex=".*InvestResponseBodyAdvice.*" onMatch="ACCEPT" onMismatch="DENY"/>
+            <Policies>
+                <TimeBasedTriggeringPolicy interval="1"
+                                           modulate="true" />
+            </Policies>
+        </RollingFile>
+
+        <!--异步appender -->
+        <Async name="InvestAsyncAppender" includeLocation="true">
+            <AppenderRef ref="InvestRollingFile" />
+            <AppenderRef ref="InvestRequestLogFile" />
+        </Async>
+    </Appenders>
+
+    <Loggers>
+        <!--OFF 0 -->
+        <!--FATAL 100 -->
+        <!--ERROR 200 -->
+        <!--WARN 300 -->
+        <!--INFO 400 -->
+        <!--DEBUG 500 -->
+        <!--TRACE 600 -->
+        <!--ALL Integer.MAX_VALUE -->
+        <Root level="DEBUG" includeLocation="true">
+            <AppenderRef ref="InvestAsyncAppender" />
+            <AppenderRef ref="Console" />
+        </Root>
+
+        <!--youcredit complete -->
+        <Logger name="org.mybatis" level="ERROR"/>
+        <Logger name="com.yitouz" level="DEBUG" />
+        <!-- 3rdparty Loggers -->
+        <logger name="org.springframework.core">
+            <level value="info" />
+        </logger>
+
+        <logger name="org.springframework.beans">
+            <level value="info" />
+        </logger>
+
+        <logger name="org.springframework.context">
+            <level value="info" />
+        </logger>
+
+        <logger name="org.springframework.web">
+            <level value="info" />
+        </logger>
+
+    </Loggers>
+</Configuration>

@@ -8,6 +8,8 @@ import org.springframework.security.access.method.P;
 import org.springframework.stereotype.Service;
 import tk.mybatis.mapper.entity.Example;
 
+import java.util.List;
+
 /**
  * Created by Wang Peng on 2017/6/8.
  */
@@ -17,13 +19,16 @@ public class UserServiceImpl implements UserService {
     @Autowired
     private UserDao userDao;
 
-
-    @Override
+   @Override
     public User selectUser(User user) {
         Example example = new Example(User.class);
         example.createCriteria()
                 .andEqualTo("userName",user.getUserName())
                 .andEqualTo("password",user.getPassword());
-        return userDao.selectByExample(example).get(0);
+       List<User> users = userDao.selectByExample(example);
+       if (users != null){
+           return users.get(0);
+       }
+       return null;
     }
 }
