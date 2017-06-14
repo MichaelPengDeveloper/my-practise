@@ -1,7 +1,7 @@
 package com.wp.practise.dao;
 
 import com.wp.practise.model.User;
-import com.wp.practise.mybatis.BaseDAO;
+import com.wp.practise.framework.mybatis.BaseDAO;
 import org.springframework.stereotype.Repository;
 
 /**

@@ -1,5 +1,7 @@
 package com.wp.practise.model;
 
+import com.wp.practise.framework.cursor.HasCursor;
+
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
@@ -7,7 +9,7 @@ import javax.persistence.Id;
  * 用户实体类
  * Created by Wang Peng on 2017/6/7.
  */
-public class User {
+public class User implements HasCursor<Integer> {
 
     @Id
     @GeneratedValue(generator = "JDBC")
@@ -18,6 +20,15 @@ public class User {
     private String password;
 
     private Double balance;
+
+    public User(){
+
+    }
+
+    public User(String userName,String password){
+        this.userName = userName;
+        this.password = password;
+    }
 
     public Integer getId() {
         return id;

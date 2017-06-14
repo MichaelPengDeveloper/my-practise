@@ -1,4 +1,4 @@
-package com.wp.practise.mybatis;
+package com.wp.practise.framework.mybatis;
 
 import tk.mybatis.mapper.common.Mapper;
 
