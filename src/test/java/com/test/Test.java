@@ -10,6 +10,8 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import javax.annotation.Resource;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by Administrator on 2017/6/4.
@@ -21,10 +23,25 @@ public class Test extends TestCase{
     @Resource
     private UserService userService;
 
+    private final List list = new ArrayList();
+
     @org.junit.Test
     public void test1(){
-        User user = userService.selectUser(new User("wangpeng", "wangpeng"));
-        logger.info("userName",user.getUserName());
+        String test = new String("1");
+
+        list.add("1");
+        test = "1";
+
+    }
+
+    class Childeren extends Father{
+
+    }
+
+    class Father{
+        public final String testFinal(){
+            return "test children";
+        }
     }
 
 }

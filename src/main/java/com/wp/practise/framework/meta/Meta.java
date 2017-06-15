@@ -21,12 +21,6 @@ public class Meta {
         RequestMethodNotSupported(405, "请求方式不支持"),
         PartFail(406, "部分数据操作失败"),
         ServerFailed(500, "服务器内部错误"),
-        LoginFailed(40000, "登录失败"),
-        UnRealName(40001, "未实名认证"),
-        UnBindCard(40002, "未绑定银行卡"),
-        UnSetPayPassword(40003, "未设置支付密码"),
-        UserFrozen(40004, "账户已冻结"),
-        StandardNotEnough(50001, "标的剩余可投金额不足"),
         ;
 
         private final int code;
