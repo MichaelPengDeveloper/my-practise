@@ -2,11 +2,16 @@ package com.wp.practise.model;
 
 import com.wp.practise.framework.cursor.HasCursor;
 
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+
 /**
  * Created by Wang Peng on 2017/6/15.
  */
 public class Product implements HasCursor<Integer> {
 
+    @Id
+    @GeneratedValue(generator = "JDBC")
     private Integer id;
 
     private String productName;

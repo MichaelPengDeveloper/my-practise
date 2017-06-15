@@ -2,6 +2,8 @@ package com.wp.practise.model;
 
 import com.wp.practise.framework.cursor.HasCursor;
 
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 import java.util.Date;
 
 /**
@@ -9,6 +11,8 @@ import java.util.Date;
  */
 public class Order implements HasCursor<Integer> {
 
+    @Id
+    @GeneratedValue(generator = "JDBC")
     private Integer id;
 
     private String orderNumber;

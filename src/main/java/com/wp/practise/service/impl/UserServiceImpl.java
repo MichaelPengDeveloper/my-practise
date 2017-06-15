@@ -4,6 +4,7 @@ import com.wp.practise.dao.UserDao;
 import com.wp.practise.framework.encrypt.AES;
 import com.wp.practise.framework.tupe.Tuple;
 import com.wp.practise.framework.tupe.TwoTuple;
+import com.wp.practise.framework.util.RequestContextUtils;
 import com.wp.practise.model.User;
 import com.wp.practise.service.UserService;
 import org.apache.commons.lang3.RandomUtils;
@@ -35,6 +36,7 @@ public class UserServiceImpl implements UserService {
         if (user != null){
             HttpSession session = request.getSession();
             session.setAttribute("userInfo",user);
+            RequestContextUtils.setUserId(user.getId());
         }else {
             return Tuple.tuple(user,false);
         }
