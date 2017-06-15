@@ -59,7 +59,7 @@
 
         <!--youcredit complete -->
         <Logger name="org.mybatis" level="ERROR"/>
-        <Logger name="com.yitouz" level="DEBUG" />
+        <Logger name="com.wp.practise" level="DEBUG" />
         <!-- 3rdparty Loggers -->
         <logger name="org.springframework.core">
             <level value="info" />
