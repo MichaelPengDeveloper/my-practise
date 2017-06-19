@@ -7,6 +7,6 @@ import com.wp.practise.model.Product;
  */
 public interface ProductService {
 
-    Product selectOneProduct();
+    Product selectOneProduct(Product product);
 
 }

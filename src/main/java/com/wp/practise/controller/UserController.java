@@ -26,24 +26,24 @@ public class UserController {
     private UserService userService;
 
     @RequestMapping(value = "/index")
-    public Object jumpIndex(@RequestParam(defaultValue = "",required = false)String userName,
-                            @RequestParam(defaultValue = "",required = false)String password, HttpServletRequest request){
+    public Object jumpIndex(@RequestParam(defaultValue = "", required = false) String userName,
+                            @RequestParam(defaultValue = "", required = false) String password, HttpServletRequest request) {
 
-        if (StringUtils.isBlank(userName)){
+        if (StringUtils.isBlank(userName)) {
             return Meta.MetaCode.Fail.withMessage("用户名不能为空！");
         }
 
-        if (StringUtils.isBlank(password)){
+        if (StringUtils.isBlank(password)) {
             return Meta.MetaCode.Fail.withMessage("密码不能为空");
         }
 
         TwoTuple<User, Boolean> login = userService.login(userName, password, request);
 
-        if (!login.getSecond()){
+        if (!login.getSecond()) {
             return Meta.MetaCode.Unauthorized.getMessage();
         }
 
-        return viewBuilder.buildSingle(login.getFirst(),"userInfo");
+        return viewBuilder.buildSingle(login.getFirst(), "userInfo");
     }
 
 }

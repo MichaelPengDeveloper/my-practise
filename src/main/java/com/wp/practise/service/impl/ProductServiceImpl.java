@@ -16,7 +16,7 @@ public class ProductServiceImpl implements ProductService{
     private ProductDao productDao;
 
     @Override
-    public Product selectOneProduct() {
-        return null;
+    public Product selectOneProduct(Product product) {
+        return productDao.selectOne(product);
     }
 }
