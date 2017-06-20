@@ -1,5 +1,7 @@
 package com.wp.practise.controller;
 
+import com.wp.practise.service.OrderService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
@@ -8,6 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class OrderController {
 
-
+    @Autowired
+    private OrderService orderService;
 
 }
