@@ -4,6 +4,7 @@ import com.wp.practise.framework.meta.Meta;
 import com.wp.practise.framework.tupe.TwoTuple;
 import com.wp.practise.framework.view.ViewBuilder;
 import com.wp.practise.model.User;
+import com.wp.practise.service.ProductService;
 import com.wp.practise.service.UserService;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,6 +25,9 @@ public class UserController {
 
     @Autowired
     private UserService userService;
+
+    @Autowired
+    private ProductService productService;
 
     @RequestMapping(value = "/index")
     public Object jumpIndex(@RequestParam(defaultValue = "", required = false) String userName,
