@@ -1,6 +1,7 @@
 package com.wp.practise.model;
 
 import com.wp.practise.framework.cursor.HasCursor;
+import org.springframework.security.access.method.P;
 
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -17,6 +18,12 @@ public class Product implements HasCursor<Integer> {
     private String productName;
 
     private Integer number;
+
+    private Double price;
+
+    public Product(Integer id){
+        this.id = id;
+    }
 
     @Override
     public Integer getId() {
@@ -41,5 +48,13 @@ public class Product implements HasCursor<Integer> {
 
     public void setNumber(Integer number) {
         this.number = number;
+    }
+
+    public Double getPrice() {
+        return price;
+    }
+
+    public void setPrice(Double price) {
+        this.price = price;
     }
 }

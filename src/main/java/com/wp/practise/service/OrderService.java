@@ -7,6 +7,7 @@ import com.wp.practise.model.Order;
  */
 public interface OrderService {
 
+
     int insertOrder(Order order);
 
 }
