@@ -29,4 +29,9 @@ public class OrderServiceImpl implements OrderService {
     public int insertOrder(Order order) {
         return orderDao.insertSelective(order);
     }
+
+    public void test(){
+        
+    }
+
 }
