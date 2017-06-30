@@ -1,6 +1,7 @@
 package com.test;
 
 import com.wp.practise.model.User;
+import com.wp.practise.service.OrderService;
 import com.wp.practise.service.UserService;
 import com.wp.practise.util.logger.InvestLogger;
 import com.wp.practise.util.logger.InvestLoggerFactory;
@@ -16,32 +17,13 @@ import java.util.List;
 /**
  * Created by Administrator on 2017/6/4.
  */
-public class Test extends TestCase{
+public class Test{
 
-    private InvestLogger logger = InvestLoggerFactory.getLogger(Test.class);
+    public static void main(String[] args){
 
-    @Resource
-    private UserService userService;
-
-    private final List list = new ArrayList();
-
-    @org.junit.Test
-    public void test1(){
-        String test = new String("1");
-
-        list.add("1");
-        test = "1";
-
-    }
-
-    class Childeren extends Father{
-
-    }
-
-    class Father{
-        public final String testFinal(){
-            return "test children";
-        }
+        Integer i1 = new Integer(130);
+        Integer i2 = new Integer(130);
+        System.out.println(i1 == i2);
     }
 
 }
