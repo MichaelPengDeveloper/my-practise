@@ -1,7 +1,7 @@
 package com.test.singleton;
 
 /**
- * 几个单利模式的创建方式
+ * 几个单例模式的创建方式
  *
  * Created by Wang peng on 2017/6/30.
  */

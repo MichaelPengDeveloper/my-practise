@@ -1,7 +1,7 @@
 package com.test.singleton;
 
 /**
- * 登记式单利模式
+ * 登记式单例模式
  *
  * Created by Wang peng on 2017/6/30.
  */
