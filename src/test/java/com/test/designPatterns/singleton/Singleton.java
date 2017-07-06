@@ -1,4 +1,4 @@
-package com.test.singleton;
+package com.test.designPatterns.singleton;
 
 /**
  * 几个单例模式的创建方式

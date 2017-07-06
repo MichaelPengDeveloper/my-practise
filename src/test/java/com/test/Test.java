@@ -1,17 +1,7 @@
 package com.test;
 
-import com.test.singleton.Singleton;
-import com.wp.practise.model.User;
-import com.wp.practise.service.OrderService;
-import com.wp.practise.service.UserService;
-import com.wp.practise.util.logger.InvestLogger;
-import com.wp.practise.util.logger.InvestLoggerFactory;
-import junit.framework.TestCase;
-import org.junit.runner.RunWith;
-import org.springframework.test.context.ContextConfiguration;
-import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+import com.test.designPatterns.singleton.Singleton;
 
-import javax.annotation.Resource;
 import java.util.*;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;

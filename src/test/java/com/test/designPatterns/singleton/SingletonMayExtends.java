@@ -1,4 +1,4 @@
-package com.test.singleton;
+package com.test.designPatterns.singleton;
 
 /**
  * 登记式单例模式
