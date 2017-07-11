@@ -21,9 +21,15 @@ public class Test{
         this.lock = lock;
     }
 
+    static transient Object[] elementData;
+
+    private static final Object[] EMPTY_ELEMENTDATA = {};
+
+    private static final int DEFAULT_CAPACITY = 10;
+
     public static void main(String[] args) throws InterruptedException {
 
-        final Set<String> strings = Collections.synchronizedSet(new HashSet<String>());
+        /*final Set<String> strings = Collections.synchronizedSet(new HashSet<String>());
 
         final Test test = new Test();
 
@@ -55,7 +61,11 @@ public class Test{
         for (String instance : strings) {
             System.out.println(instance);
         }
-        executorService.shutdown();
+        executorService.shutdown();*/
+
+        System.out.println(9 >> 1);
+
+        int test = (elementData != EMPTY_ELEMENTDATA) ? 0 : DEFAULT_CAPACITY;
 
     }
 
