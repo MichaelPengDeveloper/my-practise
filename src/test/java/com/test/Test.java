@@ -1,6 +1,8 @@
 package com.test;
 
 import com.test.designPatterns.singleton.Singleton;
+import com.wp.practise.framework.cursor.CursorUtils;
+import com.wp.practise.model.Order;
 
 import java.util.*;
 import java.util.concurrent.ExecutorService;
@@ -64,6 +66,7 @@ public class Test{
         executorService.shutdown();*/
 
         System.out.println(9 >> 1);
+        String cursor = CursorUtils.getCursor(Order.class, 1);
 
         int test = (elementData != EMPTY_ELEMENTDATA) ? 0 : DEFAULT_CAPACITY;
 
