@@ -63,10 +63,28 @@ public class Test{
         }
         executorService.shutdown();*/
 
-        System.out.println(9 >> 1);
+       /* System.out.println(0x7fffffff);
+        System.out.println(Integer.MAX_VALUE - 8);*/
+       /* Objects.requireNonNull(null);
+        System.out.println();*/
+        List<String> mod = new ArrayList<>();
+
+        mod.add("1");
+        mod.add("23");
+        mod.add("12");
+
+        Iterator<String> iterator = mod.iterator();
+
+        while (iterator.hasNext()){
+            System.out.println(iterator.next());
+        }
+
+        System.out.println(mod.size());
+
 
         int test = (elementData != EMPTY_ELEMENTDATA) ? 0 : DEFAULT_CAPACITY;
 
     }
+
 
 }
