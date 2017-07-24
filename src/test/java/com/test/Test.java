@@ -3,6 +3,7 @@ package com.test;
 import com.test.designPatterns.singleton.Singleton;
 import com.wp.practise.framework.cursor.CursorUtils;
 import com.wp.practise.model.Order;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.*;
 import java.util.concurrent.ExecutorService;
@@ -14,6 +15,8 @@ import java.util.concurrent.Executors;
 public class Test{
 
     boolean lock;
+
+    private static final Long A = Long.valueOf(Long.MAX_VALUE);
 
     public boolean isLock() {
         return lock;
@@ -31,50 +34,26 @@ public class Test{
 
     public static void main(String[] args) throws InterruptedException {
 
-        /*final Set<String> strings = Collections.synchronizedSet(new HashSet<String>());
-
-        final Test test = new Test();
-
-        test.setLock(true);
-
-        ExecutorService executorService = Executors.newCachedThreadPool();
-
-        for (int i = 0; i < 10; i++) {
-            executorService.execute(new Runnable() {
-
-                public void run() {
-                    while (true) {
-                        System.out.println(Thread.currentThread().getName() + "" +!test.isLock());
-                        if (!test.isLock()) {
-                            Singleton singleton = Singleton.getInstanceLazy();
-                            strings.add(singleton.toString());
-                            break;
-                        }
-                    }
-                }
-            });
-
-        }
-
-        Thread.sleep(500);
-        test.setLock(false);
-        Thread.sleep(500);
-        System.out.println("------并发情况下我们取到的实例------");
-        for (String instance : strings) {
-            System.out.println(instance);
-        }
-        executorService.shutdown();*/
-
-<<<<<<< HEAD
-       /* System.out.println(0x7fffffff);
-        System.out.println(Integer.MAX_VALUE - 8);*/
-       /* Objects.requireNonNull(null);
-        System.out.println();*/
+        /*System.out.println(0x7fffffff);
+        System.out.println(Integer.MAX_VALUE - 8);
+        Objects.requireNonNull(null);
+        System.out.println();
         List<String> mod = new ArrayList<>();
 
         mod.add("1");
         mod.add("23");
         mod.add("12");
+        mod.add("1");
+        mod.add("23");
+        mod.add("12");
+
+        ListIterator<String> stringListIterator = mod.listIterator();
+
+        stringListIterator.set(mod.get(1).replace("1", "2"));
+
+        while (stringListIterator.hasNext()){
+            System.out.println(stringListIterator.next());
+        }
 
         Iterator<String> iterator = mod.iterator();
 
@@ -84,14 +63,20 @@ public class Test{
 
         System.out.println(mod.size());
 
-=======
         System.out.println(9 >> 1);
-        String cursor = CursorUtils.getCursor(Order.class, 1);
->>>>>>> d792c0c4530b97c54d21620547c7933136a6f7b7
+        String cursor = CursorUtils.getCursor(Order.class, 1);*/
 
-        int test = (elementData != EMPTY_ELEMENTDATA) ? 0 : DEFAULT_CAPACITY;
+        Integer test1 = Integer.valueOf(300);
+        Integer test2 = Integer.valueOf(300);
+
+        Integer test3 = 20;
+        Integer test4 = 20;
+
+        System.out.println(test1 == test2);
+        System.out.println(test3 == test4);
+
+        //int test = (elementData != EMPTY_ELEMENTDATA) ? 0 : DEFAULT_CAPACITY;
 
     }
-
 
 }
