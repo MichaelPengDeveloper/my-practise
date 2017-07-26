@@ -103,6 +103,14 @@ public class Test{
                 .filter(Objects::nonNull)
                 .forEach(System.out::println);
 
+        int a = 1,c,b;
+
+        c = 1;
+
+        b = 2;
+
+        System.out.println(a + b + c);
+
     }
 
 
