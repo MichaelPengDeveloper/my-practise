@@ -65,12 +65,11 @@ public class Test{
         }
         executorService.shutdown();*/
 
-<<<<<<< HEAD
        /* System.out.println(0x7fffffff);
         System.out.println(Integer.MAX_VALUE - 8);*/
        /* Objects.requireNonNull(null);
         System.out.println();*/
-        List<String> mod = new ArrayList<>();
+        List<String> mod = new ArrayList<String>();
 
         mod.add("1");
         mod.add("23");
@@ -78,16 +77,22 @@ public class Test{
 
         Iterator<String> iterator = mod.iterator();
 
-        while (iterator.hasNext()){
+
+        /**/
+        long l = System.currentTimeMillis();
+        /*while (iterator.hasNext()){
             System.out.println(iterator.next());
+        }*/
+
+        for (String s : mod){
+            System.out.println(s);
         }
 
-        System.out.println(mod.size());
+        //iterator.forEachRemaining(o ->{System.out.println(o);});
+        long l1 = System.currentTimeMillis();
 
-=======
-        System.out.println(9 >> 1);
-        String cursor = CursorUtils.getCursor(Order.class, 1);
->>>>>>> d792c0c4530b97c54d21620547c7933136a6f7b7
+        System.out.println(l1 - l);
+
 
         int test = (elementData != EMPTY_ELEMENTDATA) ? 0 : DEFAULT_CAPACITY;
 

@@ -14,7 +14,8 @@
       * [读ArrayList源码] 发现一个jdk1.7更新的类--Objects。jdk api解释：这个类包含用于操作对象的静态实用方法。这些实用工具包括用于计算对象哈希代码、返回对象的字符串以及比较两个对象的null安全或零容忍方法。学习一波<br>
       * [读ArrayList源码] 了解到ArrayList底层是用了快速失败机制，意指是在ArrryList父类AbstractArrayList中有个modCount，当两个线程同时操作一个ArrayList对象的时候会拿内部类Itr中的expectedModCount做对比，在遍历该对象的<br>
       会调用checkForComodification()该方法，如果两个值不相等就会报出ConcurrentModificationException异常，在ArrayList中像add(),remove(),clear()等都会对modCount进行重新赋值，以此实现了快速失败机制。一个可以解决快速失败<br>
-      机制的方法是用和ArrayList数据结构一样的类并发包下的CopyOnWriteArrayList类。该类是基于安全失败机制。
+      机制的方法是用和ArrayList数据结构一样的类并发包下的CopyOnWriteArrayList类。该类是基于安全失败机制。<br>
+      * [读ArrayList源码]  了解到ArrayList类有个内部Itr类该类实现Itertor接口，了解到Iterator中定义了四个方法，分别是hashNext、next、remove、forEachRemaining（1.8之后加上的函数式接口）<br>
       * transient关键字是用来禁止该变量进行序列化的<br>
       * 记录一个小的Mysql知识点union all 关键字可以将两个表合成一个表
         
