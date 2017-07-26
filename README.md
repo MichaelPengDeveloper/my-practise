@@ -16,7 +16,12 @@
       会调用checkForComodification()该方法，如果两个值不相等就会报出ConcurrentModificationException异常，在ArrayList中像add(),remove(),clear()等都会对modCount进行重新赋值，以此实现了快速失败机制。一个可以解决快速失败<br>
       机制的方法是用和ArrayList数据结构一样的类并发包下的CopyOnWriteArrayList类。该类是基于安全失败机制。<br>
       * [读ArrayList源码]  了解到ArrayList类有个内部Itr类该类实现Itertor接口，了解到Iterator中定义了四个方法，分别是hashNext、next、remove、forEachRemaining（1.8之后加上的函数式接口）<br>
+      机制的方法是用和ArrayList数据结构一样的类并发包下的CopyOnWriteArrayList类。该类是基于安全失败机制。
+      * [读ArrayList源码] ArrayList类有几个内部类Itr私有类实现了Itreator接口、ListItr私有类实现了ListIterator接口继承了Itr、SubList私有类继承了AbstractList实现了RandomAccess接口、ArrayListSpliterator静态final类实现了<br>
+      Spliterator接口。
       * transient关键字是用来禁止该变量进行序列化的<br>
       * 记录一个小的Mysql知识点union all 关键字可以将两个表合成一个表
-        
+      * @SuppressWarnings该注解是jdk提供的，意思是被批注的代码元素内部的某些警告保持静默。 
+      * 记录jdk1.8时间操作新的API--LocalDate(表示没有时区的日期, LocalDate是不可变并且线程安全的)、LocalTime（表示没有时区的时间, LocalTime是不可变并且线程安全的）、LocalDateTime（表示没有时区的日期时间, LocalDateTime是不可变并且线程安全的）<br>
+      Clock( 用于访问当前时刻、日期、时间，用到时区)、Duration（用秒和纳秒表示时间的数量）<br>
  
