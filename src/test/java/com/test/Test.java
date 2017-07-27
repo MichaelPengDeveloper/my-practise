@@ -1,5 +1,9 @@
 package com.test;
 
+import com.google.common.collect.ArrayListMultimap;
+import com.google.common.collect.HashMultiset;
+import com.google.common.collect.Multimap;
+import com.google.common.primitives.Ints;
 import com.test.designPatterns.singleton.Singleton;
 import com.wp.practise.framework.cursor.CursorUtils;
 import com.wp.practise.model.Order;
@@ -102,22 +106,22 @@ public class Test{
 
 
         /**/
-        long l = System.currentTimeMillis();
+        //long l = System.currentTimeMillis();
         /*while (iterator.hasNext()){
             System.out.println(iterator.next());
         }*/
 
-        for (String s : mod){
+        /*for (String s : mod){
             System.out.println(s);
-        }
+        }*/
 
         //iterator.forEachRemaining(o ->{System.out.println(o);});
-        long l1 = System.currentTimeMillis();
+       /* long l1 = System.currentTimeMillis();
 
         System.out.println(l1 - l);
 
-        System.out.println(9 >> 1);
-        String cursor = CursorUtils.getCursor(Order.class, 1);
+        System.out.println(9 >> 1);*/
+//        String cursor = CursorUtils.getCursor(Order.class, 1);
 
 
         //int test = (elementData != EMPTY_ELEMENTDATA) ? 0 : DEFAULT_CAPACITY;
@@ -159,6 +163,35 @@ public class Test{
         b = 2;
 
         System.out.println(a + b + c);
+
+        //guava 练习
+        List<Integer> integers = Ints.asList(1, 2, 3, 4);
+
+        String join = Ints.join("+", 1, 2, 3);
+        System.out.println(join);
+
+        //数组合并
+        int[] concat = Ints.concat(new int[]{1, 2}, new int[]{3, 4});
+
+        //在一个数组中获取最大最小值
+        System.out.println("最小值：" + Ints.min(concat) + "最大值：" + Ints.max(concat));
+
+        HashMultiset<Object> objects = HashMultiset.create();
+
+        objects.add("1");
+        objects.add("1");
+        objects.add("3");
+        objects.add("1");
+
+        System.out.println(objects.count("1"));
+
+        Multimap<String, String> multimap = ArrayListMultimap.create();
+
+        multimap.put("a", "A");
+        multimap.put("a", "A");
+        multimap.put("b", "B");
+
+        System.out.println(multimap.get("a"));
 
     }
 
