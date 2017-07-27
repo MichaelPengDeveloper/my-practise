@@ -38,7 +38,6 @@ public class Test{
 
     public static void main(String[] args) throws InterruptedException {
 
-<<<<<<< HEAD
         /*final Set<String> strings = Collections.synchronizedSet(new HashSet<String>());
 
         final Test test = new Test();
@@ -78,13 +77,11 @@ public class Test{
        /* Objects.requireNonNull(null);
         System.out.println();*/
         List<String> mod = new ArrayList<String>();
-=======
         /*System.out.println(0x7fffffff);
         System.out.println(Integer.MAX_VALUE - 8);
         Objects.requireNonNull(null);
         System.out.println();
         List<String> mod = new ArrayList<>();
->>>>>>> e9785b1c77728e3b5895dd78418319234ab02286
 
         mod.add("1");
         mod.add("23");
@@ -119,10 +116,8 @@ public class Test{
 
         System.out.println(l1 - l);
 
-<<<<<<< HEAD
-=======
         System.out.println(9 >> 1);
-        String cursor = CursorUtils.getCursor(Order.class, 1);*/
+        String cursor = CursorUtils.getCursor(Order.class, 1);
 
 
         //int test = (elementData != EMPTY_ELEMENTDATA) ? 0 : DEFAULT_CAPACITY;
@@ -162,7 +157,6 @@ public class Test{
         c = 1;
 
         b = 2;
->>>>>>> e9785b1c77728e3b5895dd78418319234ab02286
 
         System.out.println(a + b + c);
 
