@@ -1,5 +1,9 @@
 package com.test;
 
+import com.google.common.collect.ArrayListMultimap;
+import com.google.common.collect.HashMultiset;
+import com.google.common.collect.Multimap;
+import com.google.common.primitives.Ints;
 import com.test.designPatterns.singleton.Singleton;
 import com.wp.practise.framework.cursor.CursorUtils;
 import com.wp.practise.model.Order;
@@ -38,6 +42,45 @@ public class Test {
 
     public static void main(String[] args) throws InterruptedException {
 
+        /*final Set<String> strings = Collections.synchronizedSet(new HashSet<String>());
+
+        final Test test = new Test();
+
+        test.setLock(true);
+
+        ExecutorService executorService = Executors.newCachedThreadPool();
+
+        for (int i = 0; i < 10; i++) {
+            executorService.execute(new Runnable() {
+
+                public void run() {
+                    while (true) {
+                        System.out.println(Thread.currentThread().getName() + "" +!test.isLock());
+                        if (!test.isLock()) {
+                            Singleton singleton = Singleton.getInstanceLazy();
+                            strings.add(singleton.toString());
+                            break;
+                        }
+                    }
+                }
+            });
+
+        }
+
+        Thread.sleep(500);
+        test.setLock(false);
+        Thread.sleep(500);
+        System.out.println("------并发情况下我们取到的实例------");
+        for (String instance : strings) {
+            System.out.println(instance);
+        }
+        executorService.shutdown();*/
+
+       /* System.out.println(0x7fffffff);
+        System.out.println(Integer.MAX_VALUE - 8);*/
+       /* Objects.requireNonNull(null);
+        System.out.println();*/
+        List<String> mod = new ArrayList<String>();
         /*System.out.println(0x7fffffff);
         System.out.println(Integer.MAX_VALUE - 8);
         Objects.requireNonNull(null);
@@ -61,14 +104,24 @@ public class Test {
 
         Iterator<String> iterator = mod.iterator();
 
-        while (iterator.hasNext()){
+
+        /**/
+        //long l = System.currentTimeMillis();
+        /*while (iterator.hasNext()){
             System.out.println(iterator.next());
-        }
+        }*/
 
-        System.out.println(mod.size());
+        /*for (String s : mod){
+            System.out.println(s);
+        }*/
 
-        System.out.println(9 >> 1);
-        String cursor = CursorUtils.getCursor(Order.class, 1);*/
+        //iterator.forEachRemaining(o ->{System.out.println(o);});
+       /* long l1 = System.currentTimeMillis();
+
+        System.out.println(l1 - l);
+
+        System.out.println(9 >> 1);*/
+//        String cursor = CursorUtils.getCursor(Order.class, 1);
 
 
         //int test = (elementData != EMPTY_ELEMENTDATA) ? 0 : DEFAULT_CAPACITY;
@@ -111,6 +164,34 @@ public class Test {
 
         System.out.println(a + b + c);
 
+        //guava 练习
+        List<Integer> integers = Ints.asList(1, 2, 3, 4);
+
+        String join = Ints.join("+", 1, 2, 3);
+        System.out.println(join);
+
+        //数组合并
+        int[] concat = Ints.concat(new int[]{1, 2}, new int[]{3, 4});
+
+        //在一个数组中获取最大最小值
+        System.out.println("最小值：" + Ints.min(concat) + "最大值：" + Ints.max(concat));
+
+        HashMultiset<Object> objects = HashMultiset.create();
+
+        objects.add("1");
+        objects.add("1");
+        objects.add("3");
+        objects.add("1");
+
+        System.out.println(objects.count("1"));
+
+        Multimap<String, String> multimap = ArrayListMultimap.create();
+
+        multimap.put("a", "A");
+        multimap.put("a", "A");
+        multimap.put("b", "B");
+
+        System.out.println(multimap.get("a"));
 
     }
 
