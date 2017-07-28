@@ -9,6 +9,11 @@
       * 覆盖索引：如果一个索引，（如：组合索引）中包含所有要查询字段的值，那么就称之为覆盖索引。<br>
       * 一个介绍Mysql索引比较好的博客，记录下来:http://blog.csdn.net/garfielder007/article/details/54295577。<br>
       * Mysql 'explain'显示了MySQL如何使用索引来处理select语句以及连接表。可以帮助选择更好的索引和写出更优化的查询语句。
+      * transient关键字是用来禁止该变量进行序列化的<br>
+      * 记录一个小的Mysql知识点union all 关键字可以将两个表合成一个表
+      * @SuppressWarnings该注解是jdk提供的，意思是被批注的代码元素内部的某些警告保持静默。 
+      * 记录jdk1.8时间操作新的API--LocalDate(表示没有时区的日期, LocalDate是不可变并且线程安全的)、LocalTime（表示没有时区的时间, LocalTime是不可变并且线程安全的）、LocalDateTime（表示没有时区的日期时间, LocalDateTime是不可变并且线程安全的）<br>
+      Clock( 用于访问当前时刻、日期、时间，用到时区)、Duration（用秒和纳秒表示时间的数量）<br>
       * [读ArrayList源码] 看到grow(int minCapacity)扩容ArrayList大小的算法，读了好大一会儿才看明白，不明白为什么jdk一直想用minCapacity这个参数来进行扩容的大小，看到注释才明白，<br>这个参数通常接近ArrayList的大小。<br>
       * [读ArrayList源码] 发现底层经常调用Array.copy和System.arraycopy这两个方法,有时间读一下
       * [读ArrayList源码] 发现一个jdk1.7更新的类--Objects。jdk api解释：这个类包含用于操作对象的静态实用方法。这些实用工具包括用于计算对象哈希代码、返回对象的字符串以及比较两个对象的null安全或零容忍方法。学习一波<br>
@@ -17,9 +22,4 @@
       机制的方法是用和ArrayList数据结构一样的类并发包下的CopyOnWriteArrayList类。该类是基于安全失败机制。
       * [读ArrayList源码] ArrayList类有几个内部类Itr私有类实现了Itreator接口、ListItr私有类实现了ListIterator接口继承了Itr、SubList私有类继承了AbstractList实现了RandomAccess接口、ArrayListSpliterator静态final类实现了<br>
       Spliterator接口。
-      * transient关键字是用来禁止该变量进行序列化的<br>
-      * 记录一个小的Mysql知识点union all 关键字可以将两个表合成一个表
-      * @SuppressWarnings该注解是jdk提供的，意思是被批注的代码元素内部的某些警告保持静默。 
-      * 记录jdk1.8时间操作新的API--LocalDate(表示没有时区的日期, LocalDate是不可变并且线程安全的)、LocalTime（表示没有时区的时间, LocalTime是不可变并且线程安全的）、LocalDateTime（表示没有时区的日期时间, LocalDateTime是不可变并且线程安全的）<br>
-      Clock( 用于访问当前时刻、日期、时间，用到时区)、Duration（用秒和纳秒表示时间的数量）<br>
  

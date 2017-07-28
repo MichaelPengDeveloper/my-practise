@@ -69,6 +69,13 @@
         </property>
     </bean>
 
+    <mvc:interceptors>
+        <mvc:interceptor>
+            <mvc:mapping path="/**"/>
+            <bean class="com.wp.practise.framework.interceptors.TestAnnotation"/>
+        </mvc:interceptor>
+    </mvc:interceptors>
+
     <bean id="wall-filter" class="com.alibaba.druid.wall.WallFilter">
         <property name="config" ref="wall-config" />
     </bean>
