@@ -1,5 +1,6 @@
 package com.wp.practise.controller;
 
+import com.wp.practise.framework.annotations.Test;
 import com.wp.practise.framework.meta.Meta;
 import com.wp.practise.framework.tupe.TwoTuple;
 import com.wp.practise.framework.view.ViewBuilder;
@@ -8,6 +9,7 @@ import com.wp.practise.service.ProductService;
 import com.wp.practise.service.UserService;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -17,7 +19,8 @@ import javax.servlet.http.HttpServletRequest;
 /**
  * Created by Wang Peng on 2017/6/7.
  */
-@RestController
+@Test
+@Controller
 public class UserController {
 
     @Autowired

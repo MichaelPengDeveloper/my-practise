@@ -20,7 +20,7 @@ import java.util.stream.Stream;
 /**
  * Created by Administrator on 2017/6/4.
  */
-public class Test{
+public class Test {
 
     boolean lock;
 
@@ -194,6 +194,5 @@ public class Test{
         System.out.println(multimap.get("a"));
 
     }
-
 
 }
