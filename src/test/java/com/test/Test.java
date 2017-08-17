@@ -8,6 +8,7 @@ import com.test.designPatterns.singleton.Singleton;
 import com.wp.practise.framework.cursor.CursorUtils;
 import com.wp.practise.model.Order;
 import com.wp.practise.model.User;
+import org.apache.commons.beanutils.BeanUtils;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import java.time.LocalDate;
@@ -125,73 +126,6 @@ public class Test {
 
 
         //int test = (elementData != EMPTY_ELEMENTDATA) ? 0 : DEFAULT_CAPACITY;
-
-        /**
-         * jdk 1.8 新的日期API列举几个 安利了一波
-         * update 2017.7.26
-         */
-        System.out.println(LocalDate.now());//返回当前日期格式（yyyy-MM-dd）
-
-        LocalDate.of(2017, 07, 26);
-
-        System.out.println(LocalDate.parse("2017-02-26"));
-
-        System.out.println(LocalDate.now().minus(1, ChronoUnit.MONTHS));//上个月
-
-        System.out.println(LocalDate.now().plus(1, ChronoUnit.DAYS));//明天
-
-        System.out.println(LocalDate.now().getDayOfWeek());//获取星期几
-
-        System.out.println("是否闰年" + LocalDate.now().isLeapYear());
-
-        User user = new User();
-
-        String s = Optional
-                .ofNullable(user)
-                .map(User::getUserName)
-                .orElse("");
-        System.out.println(s.indexOf(1));
-
-        Stream.of(1,null,23,4)
-                .filter(Objects::nonNull)
-                .forEach(System.out::println);
-
-        int a = 1,c,b;
-
-        c = 1;
-
-        b = 2;
-
-        System.out.println(a + b + c);
-
-        //guava 练习
-        List<Integer> integers = Ints.asList(1, 2, 3, 4);
-
-        String join = Ints.join("+", 1, 2, 3);
-        System.out.println(join);
-
-        //数组合并
-        int[] concat = Ints.concat(new int[]{1, 2}, new int[]{3, 4});
-
-        //在一个数组中获取最大最小值
-        System.out.println("最小值：" + Ints.min(concat) + "最大值：" + Ints.max(concat));
-
-        HashMultiset<Object> objects = HashMultiset.create();
-
-        objects.add("1");
-        objects.add("1");
-        objects.add("3");
-        objects.add("1");
-
-        System.out.println(objects.count("1"));
-
-        Multimap<String, String> multimap = ArrayListMultimap.create();
-
-        multimap.put("a", "A");
-        multimap.put("a", "A");
-        multimap.put("b", "B");
-
-        System.out.println(multimap.get("a"));
 
     }
 
