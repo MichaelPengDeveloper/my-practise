@@ -24,6 +24,12 @@
       机制的方法是用和ArrayList数据结构一样的类并发包下的CopyOnWriteArrayList类。该类是基于安全失败机制。
       * [读ArrayList源码] ArrayList类有几个内部类Itr私有类实现了Itreator接口、ListItr私有类实现了ListIterator接口继承了Itr、SubList私有类继承了AbstractList实现了RandomAccess接口、ArrayListSpliterator静态final类实现了<br>
       Spliterator接口。
+      * transient关键字是用来禁止该变量进行序列化的<br>
+      * 记录一个小的Mysql知识点union all 关键字可以将两个表合成一个表
+      * @SuppressWarnings该注解是jdk提供的，意思是被批注的代码元素内部的某些警告保持静默。 
+      * 记录jdk1.8时间操作新的API--LocalDate(表示没有时区的日期, LocalDate是不可变并且线程安全的)、LocalTime（表示没有时区的时间, LocalTime是不可变并且线程安全的）、LocalDateTime（表示没有时区的日期时间, LocalDateTime是不可变并且线程安全的）<br>
+      Clock( 用于访问当前时刻、日期、时间，用到时区)、Duration（用秒和纳秒表示时间的数量）<br>
+      * 日常工作，看到同事写的代码，发现在秒杀商品兑换的时候可以使用redis进行加锁来避免超兑并发的问题。
  
 
  
