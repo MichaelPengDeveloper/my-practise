@@ -7,7 +7,10 @@ import com.google.common.collect.*;
 import com.google.common.primitives.Ints;
 import org.apache.commons.collections.BidiMap;
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
+import java.util.function.Function;
 
 /**
  *
@@ -29,11 +32,13 @@ public class GuavaPractise {
 
     public static void main(String[] args) {
 
-       /* guavaStringHandler();
+       guavaStringHandler();
 
-        nativeMethod();*/
+        nativeMethod();
 
         guavaCollect();
+
+        functionsCoding();
 
     }
 
@@ -109,6 +114,40 @@ public class GuavaPractise {
         objectObjectHashBiMap.forcePut("1a", "11");
         System.out.println(objectObjectHashBiMap.inverse().get("11"));
 
+        Table<String, String, Integer> table = HashBasedTable.create();
+        table.put("张三", "语文", 90);
+        table.put("张三", "数学", 92);
+        table.put("张三", "英文", 94);
+        table.put("李四", "语文", 92);
+        table.put("李四", "数学", 910);
+        table.put("李四", "英文", 901);
+        Set<Table.Cell<String, String, Integer>> cells = table.cellSet();
+        for (Table.Cell cell : cells){
+            System.out.println(cell.getRowKey() + "," + cell.getColumnKey() + "," + cell.getValue());
+        }
+
+        Set<String> rowKeySet = table.rowKeySet();
+        System.out.println(rowKeySet);
+
+        Set<String> columnKeySet = table.columnKeySet();
+        System.out.println(columnKeySet);
+
+        System.out.println(table.row("张三"));
+
+        System.out.println(table.column("英文"));
+
+    }
+
+    public static void functionsCoding(){
+
+        List<String> list = Lists.newArrayList("hello world", "yes", "wangpeng");
+        Function<String, String> function = new Function<String,String>(){
+
+            @Override
+            public String apply(String s) {
+                return s.length() > 5 ? s : s.substring(0, 5);
+            }
+        };
     }
 
 }
