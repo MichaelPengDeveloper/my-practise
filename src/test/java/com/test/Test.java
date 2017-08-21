@@ -127,6 +127,40 @@ public class Test {
 
         //int test = (elementData != EMPTY_ELEMENTDATA) ? 0 : DEFAULT_CAPACITY;
 
+        Map<String, Object> map = new HashMap<>();
+        map.put("a", "c");
+        map.put("b", "b");
+        Map<String, Object> map1 = new HashMap<>();
+        map.put("a", "c");
+        map.put("b", "b");
+        map.put("c", "a");
+        List<Map<String, Object>> maps = new ArrayList<>();
+        maps.add(map);
+        maps.add(map1);
+
+        Set<String> strings = new HashSet<>();
+        maps.stream()
+                .forEach(f ->{
+                    for (String key : f.keySet()) {
+                        strings.add(key);
+                    }
+                });
+
+        strings.stream()
+                .forEach(l -> {
+                    System.out.println(l);
+                });
+
+        System.out.println(map.get("sd"));
+
+    }
+
+    static class MapKeyComparator implements Comparator<String> {
+
+        @Override
+        public int compare(String o1, String o2) {
+            return o1.compareTo(o2);
+        }
     }
 
 }

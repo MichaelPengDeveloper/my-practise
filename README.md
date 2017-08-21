@@ -30,6 +30,7 @@
       * 记录jdk1.8时间操作新的API--LocalDate(表示没有时区的日期, LocalDate是不可变并且线程安全的)、LocalTime（表示没有时区的时间, LocalTime是不可变并且线程安全的）、LocalDateTime（表示没有时区的日期时间, LocalDateTime是不可变并且线程安全的）<br>
       Clock( 用于访问当前时刻、日期、时间，用到时区)、Duration（用秒和纳秒表示时间的数量）<br>
       * 日常工作，看到同事写的代码，发现在秒杀商品兑换的时候可以使用redis进行加锁来避免超兑并发的问题。
+      * DAU（Daily Actice User 日活跃用户量）
  
 
  
