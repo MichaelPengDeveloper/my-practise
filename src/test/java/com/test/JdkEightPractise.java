@@ -1,8 +1,11 @@
 package com.test;
 
 import com.wp.practise.model.User;
+import javafx.scene.input.DataFormat;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.time.temporal.ChronoUnit;
 import java.util.Objects;
 import java.util.Optional;
@@ -19,7 +22,7 @@ public class JdkEightPractise {
          * jdk 1.8 新的日期API列举几个 安利了一波
          * update 2017.7.26
          */
-        System.out.println(LocalDate.now());//返回当前日期格式（yyyy-MM-dd）
+        /*System.out.println(LocalDate.now());//返回当前日期格式（yyyy-MM-dd）
 
         LocalDate.of(2017, 07, 26);
 
@@ -43,7 +46,10 @@ public class JdkEightPractise {
 
         Stream.of(1,null,23,4)
                 .filter(Objects::nonNull)
-                .forEach(System.out::println);
+                .forEach(System.out::println);*/
+
+        DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+        System.out.println(LocalDate.parse("2017-8-22 17:05:25", dateTimeFormatter));
 
     }
 
