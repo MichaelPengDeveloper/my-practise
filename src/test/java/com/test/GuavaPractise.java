@@ -1,15 +1,21 @@
 package com.test;
 
 import com.google.common.base.CharMatcher;
+import com.google.common.base.Functions;
 import com.google.common.base.Joiner;
 import com.google.common.base.Splitter;
+import com.google.common.cache.CacheBuilder;
+import com.google.common.cache.CacheLoader;
+import com.google.common.cache.LoadingCache;
 import com.google.common.collect.*;
 import com.google.common.primitives.Ints;
+import com.wp.practise.model.User;
 import org.apache.commons.collections.BidiMap;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
+import java.util.concurrent.TimeUnit;
 import java.util.function.Function;
 
 /**
@@ -140,14 +146,41 @@ public class GuavaPractise {
 
     public static void functionsCoding(){
 
+        //待研究
         List<String> list = Lists.newArrayList("hello world", "yes", "wangpeng");
-        Function<String, String> function = new Function<String,String>(){
+        Function<String, String> f1 = new Function<String,String>(){
 
             @Override
             public String apply(String s) {
                 return s.length() > 5 ? s : s.substring(0, 5);
             }
         };
+
+        Function<String, String> f2 = new Function<String, String>() {
+            @Override
+            public String apply(String s) {
+                return s.toUpperCase();
+            }
+        };
+
     }
+
+    private static final CacheLoader<Integer, User> c = new CacheLoader<Integer, User>() {
+        @Override
+        public User load(Integer key) throws Exception {
+            User user = new User();
+            user.setId(key);
+            user.setUserName(Thread.currentThread().getName());
+            System.out.println(user);
+            return user;
+        }
+    };
+
+    private static final LoadingCache<Integer, User> user = CacheBuilder.newBuilder()
+            .expireAfterAccess(2, TimeUnit.SECONDS)
+            .expireAfterWrite(2, TimeUnit.SECONDS)
+            .refreshAfterWrite(3, TimeUnit.SECONDS)
+            .maximumSize(10000L)
+            .build(c);
 
 }
