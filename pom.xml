@@ -32,6 +32,7 @@
     <tk-mybatis-version>3.3.9</tk-mybatis-version>
     <mysql-connector-version>5.1.29</mysql-connector-version>
     <lmax-disruptor-version>3.2.0</lmax-disruptor-version>
+    <carrotsearch-hppc-version>0.7.1</carrotsearch-hppc-version>
     <hibernate-validator-version>5.2.4.Final</hibernate-validator-version>
   </properties>
 
@@ -271,6 +272,12 @@
       <groupId>javax.servlet</groupId>
       <artifactId>javax.servlet-api</artifactId>
       <version>${javax-servlet-version}</version>
+    </dependency>
+
+    <dependency>
+      <groupId>com.carrotsearch</groupId>
+      <artifactId>hppc</artifactId>
+      <version>${carrotsearch-hppc-version}</version>
     </dependency>
 
     <dependency>
