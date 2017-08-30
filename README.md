@@ -27,7 +27,7 @@
       * 日常工作，看到同事写的代码，发现在秒杀商品兑换的时候可以使用redis进行加锁来避免超兑并发的问题。
       * DAU（Daily Actice User 日活跃用户量）
       * 可以使用JSR 303 - Bean Validation对数据进行校验
-### 学习Message Queue记录
+### 学习MessageQueue记录
       
  
 
