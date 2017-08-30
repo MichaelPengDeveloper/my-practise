@@ -145,7 +145,6 @@ public class GuavaPractise {
     }
 
     public static void functionsCoding(){
-
         //待研究
         List<String> list = Lists.newArrayList("hello world", "yes", "wangpeng");
         Function<String, String> f1 = new Function<String,String>(){
