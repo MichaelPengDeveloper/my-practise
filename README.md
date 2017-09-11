@@ -28,6 +28,7 @@
       * DAU（Daily Actice User 日活跃用户量）
       * 可以使用JSR 303 - Bean Validation对数据进行校验
       * 三款主流的Java虚拟机：HotSpot VM、J9 VM、Zing VM https://www.zhihu.com/question/29265430?sort=created
+      * TPS 系统吐吞量及事物处理数
 ### 学习MessageQueue记录
     * 消息总线（MessageQueue），是一种跨进程的通信机制，用于上下游传递消息，在互联网架构中,MQ是一种常见的上下游“逻辑解耦+物理解耦”的消息通信服务。调用方实时依赖执行结果的业务场景，请使用实时调用，而不是MQ<br>         
       * 适用MQ的场景：数据驱动的任务依赖、上游不关心多下游执行结果、异步返回执行时间长。--削峰填谷，异步解耦。
