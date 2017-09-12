@@ -108,6 +108,6 @@
     <!-- enable transaction annotation support -->
     <tx:annotation-driven transaction-manager="txManager"/>
 
-
+    <bean id="iocTest" class="com.wp.practise.model.User"></bean>
 
 </beans>

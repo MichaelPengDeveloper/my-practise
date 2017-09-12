@@ -61,4 +61,9 @@ public class User implements HasCursor<Integer> {
     public void setBalance(Double balance) {
         this.balance = balance;
     }
+
+    public void eat(){
+        System.out.println("I am eating");
+    }
+
 }
