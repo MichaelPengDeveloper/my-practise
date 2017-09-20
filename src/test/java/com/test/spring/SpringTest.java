@@ -20,7 +20,7 @@ public class SpringTest {
          * 2、解析资源文件
          * 3、实现注册（BeanFactory）
          */
-        /*ClassPathResource classPathResource = new ClassPathResource("spring/applicationContext-practise.xml");
+        ClassPathResource classPathResource = new ClassPathResource("spring/applicationContext-practise.xml");
         DefaultListableBeanFactory defaultListableBeanFactory = new DefaultListableBeanFactory();
         XmlBeanDefinitionReader xmlBeanDefinitionReader = new XmlBeanDefinitionReader(defaultListableBeanFactory);
         xmlBeanDefinitionReader.loadBeanDefinitions(classPathResource);
@@ -28,7 +28,7 @@ public class SpringTest {
         for (String s : beanDefinitionNames)
             System.out.println(s);
         System.out.println("count:" + defaultListableBeanFactory.getBeanDefinitionCount());
-        ((User)defaultListableBeanFactory.getBean("iocTest")).eat();*/
+        ((User)defaultListableBeanFactory.getBean("iocTest")).eat();
         springIocTest();
     }
 
