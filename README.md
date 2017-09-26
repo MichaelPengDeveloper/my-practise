@@ -30,6 +30,8 @@
       * 三款主流的Java虚拟机：HotSpot VM、J9 VM、Zing VM https://www.zhihu.com/question/29265430?sort=created
       * TPS 系统吐吞量及事物处理数
       * PV 即界面浏览量
+      * （2017年 3月29号）在读代码的时候 遇到一个Java修饰关键字（Volatile）记录下来，百度了一下，贴上链接http://www.cnblogs.com/zhengbin/p/5654805.html#_label1
+      *
 ### 学习MessageQueue记录
     * 消息总线（MessageQueue），是一种跨进程的通信机制，用于上下游传递消息，在互联网架构中,MQ是一种常见的上下游“逻辑解耦+物理解耦”的消息通信服务。调用方实时依赖执行结果的业务场景，请使用实时调用，而不是MQ<br>         
       * 适用MQ的场景：数据驱动的任务依赖、上游不关心多下游执行结果、异步返回执行时间长。--削峰填谷，异步解耦。
