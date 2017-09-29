@@ -34,6 +34,7 @@
     <lmax-disruptor-version>3.2.0</lmax-disruptor-version>
     <carrotsearch-hppc-version>0.7.1</carrotsearch-hppc-version>
     <hibernate-validator-version>5.2.4.Final</hibernate-validator-version>
+    <jedis-version>2.9.0</jedis-version>
   </properties>
 
   <developers>
@@ -278,6 +279,12 @@
       <groupId>com.carrotsearch</groupId>
       <artifactId>hppc</artifactId>
       <version>${carrotsearch-hppc-version}</version>
+    </dependency>
+
+    <dependency>
+      <groupId>redis.clients</groupId>
+      <artifactId>jedis</artifactId>
+      <version>2.9.0</version>
     </dependency>
 
     <dependency>

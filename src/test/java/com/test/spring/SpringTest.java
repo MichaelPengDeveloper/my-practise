@@ -7,6 +7,8 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.FileSystemXmlApplicationContext;
 import org.springframework.core.io.ClassPathResource;
 
+import java.util.Arrays;
+
 /**
  * Created by Wangpeng on 2017/9/12.
  */
@@ -33,8 +35,11 @@ public class SpringTest {
     }
 
     public static void springIocTest(){
-        ApplicationContext applicationContext = new FileSystemXmlApplicationContext("classpath:spring/applicationContext-practise.xml");
-        System.out.println(applicationContext.getBeanDefinitionCount());
+        /*ApplicationContext applicationContext = new FileSystemXmlApplicationContext("classpath:spring/applicationContext-practise.xml");
+        System.out.println(applicationContext.getBeanDefinitionCount());*/
+        String a = "1";
+        System.out.println(a.hashCode());
+
     }
 
 }
