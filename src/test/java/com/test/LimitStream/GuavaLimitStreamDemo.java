@@ -1,7 +1,6 @@
-package com.test.LimitStream;
+package com.test.limitStream;
 
 import com.google.common.util.concurrent.RateLimiter;
-import org.omg.CORBA.TIMEOUT;
 
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.TimeUnit;
