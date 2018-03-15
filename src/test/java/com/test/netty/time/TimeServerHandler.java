@@ -12,13 +12,8 @@ import io.netty.channel.ChannelHandlerContext;
 public class TimeServerHandler extends ChannelHandlerAdapter {
     @Override
     public void channelActive(final ChannelHandlerContext ctx) {
-
-        ByteBuf time = ctx.alloc().buffer(4);
-        time.writeInt((int) (System.currentTimeMillis() / 1000L + 2208988800L));
-
-        final ChannelFuture channelFuture = ctx.writeAndFlush(time);
-        channelFuture.addListener(ChannelFutureListener.CLOSE);
-
+        ChannelFuture future = ctx.writeAndFlush(new UnixTime());
+        future.addListener(ChannelFutureListener.CLOSE);
     }
 
     @Override
