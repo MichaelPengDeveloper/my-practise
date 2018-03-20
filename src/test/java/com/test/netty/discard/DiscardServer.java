@@ -22,6 +22,8 @@ public class DiscardServer {
         this.port = port;
     }
 
+    
+
     public void run(){
         EventLoopGroup bossGroup = new NioEventLoopGroup();
         EventLoopGroup workerGroup = new NioEventLoopGroup();
