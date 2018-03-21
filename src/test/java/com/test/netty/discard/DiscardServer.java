@@ -10,6 +10,8 @@ import io.netty.channel.nio.NioEventLoopGroup;
 import io.netty.channel.socket.SocketChannel;
 import io.netty.channel.socket.nio.NioServerSocketChannel;
 
+import java.math.BigDecimal;
+
 
 /**
  * Created by Wangpeng on 2018/3/14.
@@ -22,7 +24,7 @@ public class DiscardServer {
         this.port = port;
     }
 
-    
+
 
     public void run(){
         EventLoopGroup bossGroup = new NioEventLoopGroup();
@@ -55,14 +57,20 @@ public class DiscardServer {
     }
 
     public static void main(String[] args) {
-        int port;
+        /*int port;
         if (args.length > 0) {
             port = Integer.parseInt(args[0]);
         } else {
             port = 8080;
         }
-        new DiscardServer(port).run();
-
+        new DiscardServer(port).run();*/
+        /*BigDecimal add = new BigDecimal("0.1").add(new BigDecimal("0.2"));
+        System.out.println(add);
+        double a = 0.1 + 0.2;
+        System.out.println(a);
+        System.out.println(a == 0.30000000000000004);*/
+        String s = "asda";
+        System.out.println(s.hashCode());
     }
 
 }
