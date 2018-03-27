@@ -18,11 +18,30 @@ public class MyThread extends Thread {
             e.printStackTrace();
         }
 
+        for (int i = 0; i < 100; i++) {
+            if ((i) % 10 == 0) {
+                System.out.println("-------" + i);
+            }
+            System.out.print(i);
+            try {
+                Thread.sleep(1000);
+                System.out.print("    线程睡眠1秒！\n");
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
 
-        MyThread myThread = new MyThread();
+        Object object = new Object();
+        Object lock = new Object();
+        synchronized (lock){
+            object.wait();
+            object.notify();
+        }
+
+        /*MyThread myThread = new MyThread();
         myThread.setName("myThread");
         myThread.start();
 
@@ -35,7 +54,7 @@ public class MyThread extends Thread {
             }
         } catch (InterruptedException e) {
             e.printStackTrace();
-        }
+        }*/
 
     }
 }
