@@ -18,7 +18,7 @@ public class CircleQueue {
         a = new int[len];
     }
 
-    public int insert(int x){
+    private int insert(int x){
         if (isFull()){
             System.out.println("circle queue is Full");
             return -1;
@@ -55,7 +55,7 @@ public class CircleQueue {
         return a[(tail + len - 1)%len];
     }
 
-    public boolean isFull(){
+    private boolean isFull(){
         //有个规定，要给队尾留出一个空间来
         //如果不留出一个空间，举个例子，创建大小为12的数组，索引值为0~11.不断向其中添加元素
         //当添加到tail=11之后，就把tail置为(tail+1)%12 = 0
@@ -77,6 +77,18 @@ public class CircleQueue {
         }else {
             return false;
         }
+    }
+
+    public static void main(String[] args) {
+        CircleQueue circleQueue = new CircleQueue(4);
+        System.out.println(circleQueue.insert(1));
+        System.out.println(circleQueue.insert(2));
+        System.out.println(circleQueue.insert(3));
+        System.out.println(circleQueue.insert(4));
+        for(int i = 0; i < 4; i++){
+            System.out.println(circleQueue.pop());
+        }
+
     }
 
 }
