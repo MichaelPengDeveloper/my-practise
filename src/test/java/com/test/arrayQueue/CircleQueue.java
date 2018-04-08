@@ -39,7 +39,7 @@ public class CircleQueue {
         }else {
             int n = a[head];
             //头结点不断追赶尾结点
-            head = (head + 1)%len;
+            head = (head + 1) % len;
             //返回最近弹出的元素
             return n;
         }
@@ -52,7 +52,7 @@ public class CircleQueue {
 
     //get tail for circle queue
     private int tail(){
-        return a[(tail + len - 1)%len];
+        return a[(tail + len - 1) % len];
     }
 
     private boolean isFull(){
