@@ -9,6 +9,8 @@ import com.wp.practise.service.OrderService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.method.P;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Propagation;
+import org.springframework.transaction.annotation.Transactional;
 
 /**
  * Created by Wang Peng on 2017/6/15.
@@ -26,6 +28,7 @@ public class OrderServiceImpl implements OrderService {
     private ProductDao productDao;
 
     @Override
+    @Transactional(propagation = Propagation.REQUIRED)
     public int insertOrder(Order order) {
         return orderDao.insertSelective(order);
     }

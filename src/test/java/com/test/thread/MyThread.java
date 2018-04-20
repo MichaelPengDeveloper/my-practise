@@ -1,5 +1,10 @@
 package com.test.thread;
 
+import org.apache.commons.collections.map.HashedMap;
+
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.concurrent.Executor;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
@@ -37,9 +42,8 @@ public class MyThread extends Thread {
     }
 
     public static void main(String[] args) throws InterruptedException {
-
         Executor executor = Executors.newFixedThreadPool(10);
-
+        Map<String, Object> map = new HashMap();
         Object object = new Object();
         Object lock = new Object();
         synchronized (lock){
